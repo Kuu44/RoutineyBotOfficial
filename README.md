@@ -53,3 +53,5 @@ A Discord Bot for notifying of routines
 - subscribed 3 new servers to the bot
 #### v2.1 patch1
 - fixed weird promise rejection error (with _current_ and _next_ commands)
+#### v2.1 patch2
+- fixed faulty database error
