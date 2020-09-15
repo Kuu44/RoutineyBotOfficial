@@ -1,10 +1,11 @@
-function postEmbed(day, channel, msg, description) {
+function postEmbed(day, channel, msg, description, serverId) {
   const Discord = require('discord.js');
-  const info = require('../info.js');
+  const infoMain = require('../info.js');
+  const info = infoMain[serverId];
 
   const exampleEmbed = new Discord.MessageEmbed()
     .setColor('#0099ff')
-    .setTitle(`${info.days[day]}`)
+    .setTitle(`${infoMain.days[day]}`)
     .setURL('https://time.is/')
     .setAuthor(info.className, info.classLogo, info.classLink)
     .setDescription(description)

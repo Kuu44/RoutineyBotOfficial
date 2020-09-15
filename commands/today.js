@@ -1,14 +1,24 @@
 module.exports = {
   name: 'today',
   args: false,
+  dontShow: false,
   description: 'The bread and butter of Routiney!',
   execute(message, args) {
     const msgCreate = require('../functions/post.js');
     const postEmbed = require('../functions/postEmbed.js');
-    var today = new Date();
-    const day = today.getDay();
+    const {
+      getCurrTime,
+      getDay
+    } = require('../functions/timeConvert.js');
+    const info = require('../info.js');
 
-    const msg = msgCreate(day);
-    postEmbed(day, message.channel, msg, 'Today\'s Classes:');
+    const day = getDay(info[message.guild.id].timeZoneFix);
+
+    if (day == 6) {
+      message.channel.send(`Its a Saturday :tada:. Ja, jiiley apni jindagi, <@!${message.author.id}>! :partying_face:`);
+      return;
+    }
+    const msg = msgCreate(day, message.guild.id);
+    postEmbed(day, message.channel, msg, 'Today\'s Classes:', message.guild.id);
   }
 };

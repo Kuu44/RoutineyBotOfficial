@@ -1,5 +1,7 @@
-function msgCreate(day) {
-  const info = require('../info.js');
+function msgCreate(day, serverId) {
+  var info = require('../info.js');
+  info = info[serverId];
+
   const {
     inMinutes,
     convertTime,

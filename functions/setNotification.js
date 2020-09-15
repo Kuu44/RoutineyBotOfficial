@@ -4,9 +4,10 @@
 // notificationMessage = the string that you want to display
 // time = time array of format [hours,minutes]
 
-const setNotifications = (day, schedule, channel, notificationMessage, time, position) => {
+const setNotifications = (day, schedule, channel, notificationMessage, time, position, serverId) => {
   const sendCurrent = require('./sendCurrent.js');
-  const info = require('../info.js');
+  var info = require('../info.js');
+  info = info[serverId];
   const {
     timeZoneFix
   } = require('./timeConvert.js');
@@ -46,11 +47,11 @@ const setNotifications = (day, schedule, channel, notificationMessage, time, pos
       };
   }
   //Time Zone conversion
-  const timeZone = timeZoneFix(time);
+  const timeZone = timeZoneFix(time, info.timeZoneFix);
   // const timeZone = time;
   console.log(timeZone);
   var j = schedule.scheduleJob(`${timeZone[1]} ${timeZone[0]} * * ${day}`, function() {
-    sendCurrent(day, time, position, msg, channel);
+    sendCurrent(day, time, position, msg, channel, serverId);
   });
 };
 module.exports = setNotifications;

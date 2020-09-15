@@ -1,6 +1,7 @@
-function sendCurrent(day, currTime, position, msg, channel) {
+function sendCurrent(day, position, msg, channel, serverId) {
   const Discord = require('discord.js');
-  const info = require('../info.js');
+  var info = require('../info.js');
+  info = info[serverId];
   const {
     inMinutes,
     convertTime
@@ -14,8 +15,6 @@ function sendCurrent(day, currTime, position, msg, channel) {
     const emotePNG = info.routine[day]._emotePNGs;
 
     //time is an array of form : [[startHour,startMinute], [startMinute,endMinute]]; startHour= time[0][0]
-    //function to calculate "now" time
-    const currentFormattedTime = convertTime(currTime);
     if (position < timing.length) time = timing[position];
     //console.log(position+' '+time+' '+timing[position]);
   }

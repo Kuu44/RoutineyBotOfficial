@@ -1,16 +1,20 @@
 module.exports = {
   name: 'classat',
   args: true,
+  dontShow: false,
   usage: 'rt! classat <dayOfWeek> <Hour(in 24)> <Minute>',
   description: 'shows class at the given time',
   execute(message, args) {
     const Discord = require('discord.js');
-    const info = require('../info.js');
+    var info = require('../info.js');
+    info = info[message.guild.id];
+
     const sendCurrent = require('../functions/sendCurrent.js');
     const {
       inMinutes,
       convertTime,
-      getTime
+      getTime,
+      getCurrTime
     } = require('../functions/timeConvert.js');
 
     var day;
@@ -35,7 +39,7 @@ module.exports = {
         day = 5;
         break;
       case "saturday":
-      	message.channel.send(`Its a Saturday :tada:. Ja, jiiley apni jindagi, <@!${message.author.id}>! :partying_face:`);
+        message.channel.send(`Its a Saturday :tada:. Ja, jiiley apni jindagi, <@!${message.author.id}>! :partying_face:`);
         return;
         break;
       default:
@@ -44,15 +48,15 @@ module.exports = {
     }
 
     var currTime;
-		if(!args[1]){
-			message.channel.send('You forgot to enter an hour :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute>**');
-			return;
-		}
-		if(args.length==2){
-			args.push(0);
-		args[2]=0;
-		}
-    if ((args[1] > 24 && args[1]>0) || (args[2] > 59 && args[2]>=0)) {
+    if (!args[1]) {
+      message.channel.send('You forgot to enter an hour :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute>**');
+      return;
+    }
+    if (args.length == 2) {
+      args.push(0);
+      args[2] = 0;
+    }
+    if ((args[1] > 24 && args[1] > 0) || (args[2] > 59 && args[2] >= 0)) {
       message.channel.send('Hours & minutes dont go over 24 or 59 :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute>**');
       return;
     } else currTime = [args[1], args[2]];
@@ -116,6 +120,6 @@ module.exports = {
           };
       }
     }
-    sendCurrent(day, currTime, position, msg, message.channel);
+    sendCurrent(day, position, msg, message.channel, message.guild.id);
   }
 };

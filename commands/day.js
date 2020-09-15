@@ -2,6 +2,7 @@ module.exports = {
   name: 'day',
   args: true,
   usage: 'rt!day <day of the week>',
+  dontShow: false,
   description: 'Shows routine of a day!',
   execute(message, args) {
     const msgCreate = require('../functions/post.js');
@@ -37,7 +38,7 @@ module.exports = {
         return;
     }
 
-    const msg = msgCreate(day);
-    postEmbed(day, message.channel, msg, 'Classes For The Day:');
+    const msg = msgCreate(day, message.guild.id);
+    postEmbed(day, message.channel, msg, 'Classes For The Day:', message.guild.id);
   },
 };
