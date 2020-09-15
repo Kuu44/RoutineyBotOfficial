@@ -11,8 +11,6 @@ module.exports = {
     const sendCurrent = require('../functions/sendCurrent.js');
     const {
       inMinutes,
-      convertTime,
-      getTime,
       getCurrTime,
       getDay
     } = require('../functions/timeConvert.js');
@@ -43,26 +41,26 @@ module.exports = {
     //time is an array of form : [[startHour,startMinute], [startMinute,endMinute]]; startHour= time[0][0]
     //function to calculate "now" time
     var time = 0;
-    var position = 0;
+    var posn = 0;
     const nowTime = inMinutes(currTime);
 
-    if (nowTime < inMinutes(timing[0][0])) position = -1; //for next
+    if (nowTime < inMinutes(timing[0][0])) posn = -1; //for next
     else
-      while (position < timing.length && !time) {
-        //console.log(position);
-        const perStart = inMinutes(timing[position][0]);
-        const perEnd = inMinutes(timing[position][1]);
+      while (posn < timing.length && !time) {
+        //console.log(posn);
+        const perStart = inMinutes(timing[posn][0]);
+        const perEnd = inMinutes(timing[posn][1]);
         if ((nowTime > perStart) && (nowTime < perEnd)) {
-          time = timing[position];
+          time = timing[posn];
           break;
         }
-        position++;
+        posn++;
       }
 
     //For next
-    position++;
-    if(position==0) time = timing[position];
-    else if (position == timing.length) time = 0;
+    posn++;
+    if(posn==0) time = timing[posn];
+    else if (posn == timing.length) time = 0;
 
     if (!time) {
       msg = {
@@ -72,7 +70,7 @@ module.exports = {
         thumbnail: 'https://i.imgur.com/cuLTlNe.png'
       };
     } else {
-      switch (periods[position]) {
+      switch (periods[posn]) {
         case 'B':
           msg = {
             period: 'BREAK :exploding_head:',
@@ -91,13 +89,13 @@ module.exports = {
           break;
         default:
           msg = {
-            period: periods[position],
-            teacher: 'Teacher: ' + teachers[position],
+            period: periods[posn],
+            teacher: 'Teacher: ' + teachers[posn],
             quote: ':rotating_light: Next Class :rotating_light:',
-            thumbnail: emotePNG[position]
+            thumbnail: emotePNG[posn]
           };
       }
     }
-    sendCurrent(day, position, msg, message.channel, message.guild.id);
+    sendCurrent(day, posn, msg, message.channel, message.guild.id);
   }
 };
