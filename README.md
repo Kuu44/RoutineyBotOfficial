@@ -55,3 +55,5 @@ A Discord Bot for notifying of routines
 - fixed weird promise rejection error (with _current_ and _next_ commands)
 #### v2.1 patch2
 - fixed faulty database error
+#### v2.1 patch3
+- fixed error with notifications 

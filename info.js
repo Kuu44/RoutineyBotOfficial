@@ -281,7 +281,7 @@ const info = {
   },
   "544232674412462101" /*kuu's*/: {
     "notificationsON": false,
-    "timeZoneFix": [0, 0],
+    "timeZoneFix": [5, 45],
     "className": "075 BCT AB",
     "classLogo": "https://i.imgur.com/OQwR8CB.png",
     "classLink": "https://teams.microsoft.com/_#/school//?ctx=teamsGrid",

@@ -51,7 +51,7 @@ const setNotifications = (day, schedule, channel, notificationMessage, time, pos
   // const timeZone = time;
   console.log(timeZone);
   var j = schedule.scheduleJob(`${timeZone[1]} ${timeZone[0]} * * ${day}`, function() {
-    sendCurrent(day, time, position, msg, channel, serverId);
+    sendCurrent(day, position, msg, channel, serverId);
   });
 };
 module.exports = setNotifications;
