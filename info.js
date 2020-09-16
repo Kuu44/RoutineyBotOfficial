@@ -625,7 +625,7 @@ const info = {
     "notificationsON": false,
     "timeZoneFix": [5, 45],
     "className": "076 BCT AB",
-    "classLogo": "https://i.imgur.com/OQwR8CB.png",
+    "classLogo": "https://media.discordapp.net/attachments/695687733330313286/753473074610831390/6738_WaddlingDuck.gif",
     "classLink": "https://teams.microsoft.com/_#/school//?ctx=teamsGrid",
     "preTime": 15,
     "channelId": 745136785666998303, //076-BCT-AB: #reminders
