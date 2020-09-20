@@ -29,7 +29,7 @@ module.exports = {
         for (var day = 0; day < 6; day++) {
           //Prints routine in the morning
           const todayComm = require(`./today.js`);
-          const timeToSet = timeZoneFix([10, 00], info.timeZoneFix);
+          const timeToSet = timeZoneFix([9, 59], info.timeZoneFix);
           schedule.scheduleJob(`${timeToSet[1]} ${timeToSet[0]} * * ${day}`, function() {
             todayComm.execute(message, args);
           });
