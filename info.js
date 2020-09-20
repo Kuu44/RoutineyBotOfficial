@@ -629,11 +629,12 @@ const info = {
     "classLink": "https://teams.microsoft.com/_#/school//?ctx=teamsGrid",
     "preTime": 15,
     "channelId": 745136785666998303, //076-BCT-AB: #reminders
-    "routine": [{
-        "_emotes": [emotes['BCT076'][0], emotes['BCT076'][1], "", emotes['BCT076'][2], "END"],
-        "_emotePNGs": [emotePNGs['BCT076'][0], emotePNGs['BCT076'][1], "", emotePNGs['BCT076'][2], "END"],
-        "_periods": [subjects['BCT076'][0], subjects['BCT076'][1], "B", subjects['BCT076'][2], "END"],
-        "_teachers": [teachers['BCT076'][0], teachers['BCT076'][1], "", teachers['BCT076'][2], "END"],
+    "routine": [
+      {
+        "_emotes": [emotes['BCT076'][0], emotes['BCT076'][1], "END"],
+        "_emotePNGs": [emotePNGs['BCT076'][0], emotePNGs['BCT076'][1], "END"],
+        "_periods": [subjects['BCT076'][0], subjects['BCT076'][1], "END"],
+        "_teachers": [teachers['BCT076'][0], teachers['BCT076'][1], "END"],
         "_timing": [
           [
             [10, 15],
@@ -645,14 +646,6 @@ const info = {
           ],
           [
             [12, 45],
-            [13, 35]
-          ],
-          [
-            [13, 35],
-            [14, 25]
-          ],
-          [
-            [14, 25],
             [16, 55]
           ]
         ]
@@ -702,10 +695,10 @@ const info = {
         ]
       },
       {
-        "_emotes": [emotes['BCT076'][0], emotes['BCT076'][4], "END"],
-        "_emotePNGs": [emotePNGs['BCT076'][0], emotePNGs['BCT076'][4], "END"],
-        "_periods": [subjects['BCT076'][0], subjects['BCT076'][4], "END"],
-        "_teachers": [teachers['BCT076'][0], teachers['BCT076'][4], "END"],
+        "_emotes": ["", emotes['BCT076'][4],"",emotes['BCT076'][0], "END"],
+        "_emotePNGs": ["", emotePNGs['BCT076'][4],"", emotePNGs['BCT076'][0], "END"],
+        "_periods": [" ", subjects['BCT076'][4],"B", subjects['BCT076'][0], "END"],
+        "_teachers": ["", teachers['BCT076'][4],"", teachers['BCT076'][0], "END"],
         "_timing": [
           [
             [10, 15],
@@ -717,6 +710,10 @@ const info = {
           ],
           [
             [12, 45],
+            [14,0],
+          ],
+          [
+            [14, 0],
             [16, 55]
           ]
         ]
@@ -754,14 +751,18 @@ const info = {
         ]
       },
       {
-        "_emotes": ["", emotes['BCT076'][4], emotes['BCT076'][3], emotes['BCT076'][4], "END"],
-        "_emotePNGs": ["", emotePNGs['BCT076'][4], emotePNGs['BCT076'][3], emotePNGs['BCT076'][4], "END"],
-        "_periods": [" ", subjects['BCT076'][4], subjects['BCT076'][3], subjects['BCT076'][4], "END"],
-        "_teachers": ["", teachers['BCT076'][4], teachers['BCT076'][11], teachers['BCT076'][12], "END"],
+        "_emotes": [emotes['BCT076'][2], "", emotes['BCT076'][4], emotes['BCT076'][3],"", emotes['BCT076'][4], "END"],
+        "_emotePNGs": [emotePNGs['BCT076'][2], "", emotePNGs['BCT076'][4], emotePNGs['BCT076'][3],"", emotePNGs['BCT076'][4], "END"],
+        "_periods": [subjects['BCT076'][2], " ",subjects['BCT076'][4], subjects['BCT076'][3], "B", subjects['BCT076'][4], "END"],
+        "_teachers": [teachers['BCT076'][2], "", teachers['BCT076'][3], teachers['BCT076'][11],"", teachers['BCT076'][12], "END"],
         "_timing": [
           [
             [10, 15],
-            [11, 55]
+            [11, 5]
+          ],
+          [
+            [11, 5],
+            [11, 55],
           ],
           [
             [11, 55],
@@ -773,12 +774,12 @@ const info = {
           ],
           [
             [14, 25],
-            [16, 5]
+            [14, 55]
           ],
           [
-            [16, 5],
-            [16, 55]
-          ]
+            [14,55],
+            [16,55],
+          ],
         ]
       }
     ]

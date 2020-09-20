@@ -57,3 +57,5 @@ A Discord Bot for notifying of routines
 - fixed faulty database error
 #### v2.1 patch3
 - fixed error with notifications 
+#### v2.1 patch4
+- database patch
