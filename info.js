@@ -41,7 +41,7 @@ BCT076:
 2. Workshop Technology; :hammer:; NA
 3. Chemistry;:lab_coat:; SP; RMS; AS; SJ
 4. Basic Electronics Engineering;:control_knobs:; JKM; SST
-5. Engineering Drawing;:triangular_ruler:; RC
+5. Engineering Drawing;:triangular_ruler:; NA
 6. Thermodynamics;:thermometer: ; LAB
 7. Basic ElectrAonics Engineering;:control_knobs:; LAB
 8. Chemistry;:lab_coat:;LAB
@@ -76,7 +76,7 @@ const emotes = {
 const teachers = {
   "BCT075": ["SG", "MB", "SKM", "DSB", "BS", "SPP", "KBT", "BDM", "JG", "JRS", "LAB"],
   "kuus": ["SG", "MB", "SKM", "DSB", "BS", "SPP", "KBT", "BDM", "JG", "JRS", "LAB"],
-  "BCT076": ["AKJ", "GG", "NA", "SP", "JKM", "RC", "JG", "AKB", "PA", "RMS", "AS", "SJ", "SST", "LAB"]
+  "BCT076": ["AKJ", "GG", "NA", "SP", "JKM", "NA", "JG", "AKB", "PA", "RMS", "AS", "SJ", "SST", "LAB"]
 }; //List of teachers
 const emotePNGs = {
   "BCT075": [
