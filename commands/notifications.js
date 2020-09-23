@@ -40,9 +40,8 @@ module.exports = {
             if (item != 'END') {
               var notificationMessage = `  ${item}  ${routine[day]._teachers[index]} Start time : ${routine[day]._timing[index][0]} Notification time:   ${getTime(routine[day]._timing[index][0], info.preTime)} `;
               console.log('Day ' + day + ' ' + notificationMessage);
-
-              setNotification(day, schedule, notificationChannel, ` starts in 15 minutes`, getTime(routine[day]._timing[index][0], info.preTime), index, message.guild.id);
-              setNotification(day, schedule, notificationChannel, ` has started`, routine[day]._timing[index][0], index, message.guild.id);
+              if (info.preNotification) setNotification(day, schedule, notificationChannel, ` starts in ${info.preTime} minutes`, getTime(routine[day]._timing[index][0], info.preTime), index, message.guild.id);
+              if (info.startNotification) setNotification(day, schedule, notificationChannel, ` has started`, routine[day]._timing[index][0], index, message.guild.id);
             }
           });
         }

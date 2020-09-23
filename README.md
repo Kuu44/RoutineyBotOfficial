@@ -59,3 +59,5 @@ A Discord Bot for notifying of routines
 - fixed error with notifications 
 #### v2.1 patch4
 - database patch
+#### v2.1 patch5
+- made preClass notifications and start notifications toggle-able

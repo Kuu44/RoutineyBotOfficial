@@ -110,6 +110,8 @@ const emotePNGs = {
 const info = {
   "550704758055370767" /*The Collusion*/: {
     "notificationsON": false,
+    "startNotification": true,
+    "preNotification": true,
     "timeZoneFix": [5, 45],
     "className": "075 BCT AB",
     "classLogo": "https://i.imgur.com/OQwR8CB.png",
@@ -146,10 +148,10 @@ const info = {
         ]
       },
       {
-        "_emotes": [emotes['BCT075'][3], emotes['BCT075'][0], "", emotes['BCT075'][2], emotes['BCT075'][4], "END"],
-        "_emotePNGs": [emotePNGs['BCT075'][3], emotePNGs['BCT075'][0], "", emotePNGs['BCT075'][2], emotePNGs['BCT075'][4], "END"],
-        "_periods": [subjects['BCT075'][3], subjects['BCT075'][0], "B", subjects['BCT075'][2], subjects['BCT075'][4], "END"],
-        "_teachers": [teachers['BCT075'][3], teachers['BCT075'][7], "", teachers['BCT075'][2], teachers['BCT075'][10], "END"],
+        "_emotes": [emotes['BCT075'][3], emotes['BCT075'][0], "", emotes['BCT075'][2], "", emotes['BCT075'][2], "END"],
+        "_emotePNGs": [emotePNGs['BCT075'][3], emotePNGs['BCT075'][0], "", emotePNGs['BCT075'][2], "",emotePNGs['BCT075'][2], "END"],
+        "_periods": [subjects['BCT075'][3], subjects['BCT075'][0], "B", subjects['BCT075'][2], "", subjects['BCT075'][2], "END"],
+        "_teachers": [teachers['BCT075'][3], teachers['BCT075'][7], "", teachers['BCT075'][2], "", teachers['BCT075'][9], "END"],
         "_timing": [
           [
             [10, 15],
@@ -169,7 +171,11 @@ const info = {
           ],
           [
             [14, 25],
-            [16, 55]
+            [16, 0]
+          ],
+          [
+            [16,0],
+            [17,30]
           ]
         ]
       },
@@ -281,6 +287,8 @@ const info = {
   },
   "544232674412462101" /*kuu's*/: {
     "notificationsON": false,
+    "startNotification": true,
+    "preNotification": true,
     "timeZoneFix": [5, 45],
     "className": "075 BCT AB",
     "classLogo": "https://i.imgur.com/OQwR8CB.png",
@@ -452,6 +460,8 @@ const info = {
   },
   "681076561142611989" /*bot-test-server*/: {
     "notificationsON": false,
+    "startNotification": true,
+    "preNotification": true,
     "timeZoneFix": [5, 45],
     "className": "Bot Test Server",
     "classLogo": "https://i.imgur.com/OQwR8CB.png",
@@ -623,11 +633,13 @@ const info = {
   },
   "679306265674907671": /*BCT076*/ {
     "notificationsON": false,
+    "startNotification": false,
+    "preNotification": true,
     "timeZoneFix": [5, 45],
     "className": "076 BCT AB",
     "classLogo": "https://media.discordapp.net/attachments/695687733330313286/753473074610831390/6738_WaddlingDuck.gif",
     "classLink": "https://teams.microsoft.com/_#/school//?ctx=teamsGrid",
-    "preTime": 15,
+    "preTime": 10,
     "channelId": 745136785666998303, //076-BCT-AB: #reminders
     "routine": [
       {
