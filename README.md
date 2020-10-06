@@ -1,5 +1,5 @@
-[![Run on Repl.it](https://repl.it/badge/github/Kuu44/RoutineyBotOfficial)](https://repl.it/github/Kuu44/RoutineyBotOfficial)
-# RoutineyBot 
+[![Run on Repl.it](https://repl.it/badge/github/Kuu44/RoutineyBot)](https://repl.it/github/Kuu44/RoutineyBot)
+# RoutineyBot
 A Discord Bot for notifying of routines
 
 ## Version History
@@ -57,8 +57,12 @@ A Discord Bot for notifying of routines
 #### v2.1 patch2
 - fixed faulty database error
 #### v2.1 patch3
-- fixed error with notifications 
+- fixed error with notifications
 #### v2.1 patch4
 - database patch
 #### v2.1 patch5
 - made preClass notifications and start notifications toggle-able
+#### v2.1 patch6
+- added 074BCT database
+- changed _teachers_ array to contain _server IDs_ as keys
+- added links of classes in the _notifications_

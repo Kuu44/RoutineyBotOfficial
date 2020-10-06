@@ -4,7 +4,7 @@ module.exports = {
   dontShow: false,
   description: "Turns on the routine notifications",
   execute(message, args) {
-    var info = require('../info.js');
+    var {info} = require('../info.js');
     info = info[message.guild.id];
 
     const channelId = info.channelId;
@@ -24,7 +24,7 @@ module.exports = {
       (u) => u.id == channelId
     );
     //Setting Notifications
-    if (!info.notificationsON) {
+    if (info.notificationsON) {
       if (notificationChannel != undefined) {
         for (var day = 0; day < 6; day++) {
           //Prints routine in the morning
@@ -59,7 +59,7 @@ module.exports = {
         });
 
         //notificationChannel.send(" Notifications turned on ");
-        info.notificationsON = true;
+        info.notificationsON = false;
         console.log(
           `Notifications turned on in <#${notificationChannel.name}> channel`
         );

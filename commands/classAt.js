@@ -6,7 +6,7 @@ module.exports = {
   description: 'shows class at the given time',
   execute(message, args) {
     const Discord = require('discord.js');
-    var info = require('../info.js');
+    var {info,teachers} = require('../info.js');
     info = info[message.guild.id];
 
     const sendCurrent = require('../functions/sendCurrent.js');
@@ -49,7 +49,7 @@ module.exports = {
 
     var currTime;
     if (!args[1]) {
-      message.channel.send('You forgot to enter an hour :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute>**');
+      message.channel.send('You forgot to enter an hour :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute _(opt)_ >**');
       return;
     }
     if (args.length == 2) {
@@ -57,7 +57,7 @@ module.exports = {
       args[2] = 0;
     }
     if ((args[1] > 24 && args[1] > 0) || (args[2] > 59 && args[2] >= 0)) {
-      message.channel.send('Hours & minutes dont go over 24 or 59 :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute>**');
+      message.channel.send('Hours & minutes dont go over 24 or 59 :sweat_smile:\nUsage:**rt! sample <dayOfWeek> <Hour(in 24)> <Minute _(opt)_ >**');
       return;
     } else currTime = [args[1], args[2]];
 
@@ -66,7 +66,7 @@ module.exports = {
 
     const emotes = info.routine[day]._emotes;
     const periods = info.routine[day]._periods;
-    const teachers = info.routine[day]._teachers;
+    const Teachers = info.routine[day]._teachers;
     const timing = info.routine[day]._timing;
     const emotePNG = info.routine[day]._emotePNGs;
 
@@ -78,20 +78,21 @@ module.exports = {
     while (position < timing.length && !time) {
       const perStart = inMinutes(timing[position][0]);
       const perEnd = inMinutes(timing[position][1]);
-      if ((nowTime > perStart) && (nowTime < perEnd)) {
+      if ((nowTime >= perStart) && (nowTime < perEnd)) {
         time = timing[position];
         break;
       }
       position++;
     }
-
+    
     const currentFormattedTime = convertTime(currTime);
     if (!time) {
       msg = {
         period: 'No Classes at that time',
         teacher: 'Ja beta, jiiley apni jindagi :smile:',
-        quote: '<Time>: ' + currentFormattedTime,
-        thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+        quote: '<Given Time>: ' + currentFormattedTime,
+        thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+        linkPos: -1
       };
     } else {
       switch (periods[position]) {
@@ -99,24 +100,27 @@ module.exports = {
           msg = {
             period: 'BREAK :exploding_head:',
             teacher: 'Go Wild :zany_face:',
-            quote: '<Time> :' + currentFormattedTime,
-            thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+            quote: '<Given Time> :' + currentFormattedTime,
+            thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+            linkPos: -1
           };
           break;
         case ' ':
           msg = {
             period: 'Free Period :zany_face:',
             teacher: 'Time for your gaming :video_game:!',
-            quote: '<Time> :' + currentFormattedTime,
-            thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+            quote: '<Given Time> :' + currentFormattedTime,
+            thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+            linkPos: -1
           };
           break;
         default:
           msg = {
             period: periods[position],
-            teacher: 'Teacher: ' + teachers[position],
+            teacher: 'Teacher: ' + Teachers[position],
             quote: ':rotating_light: Class Time :rotating_light:',
-            thumbnail: emotePNG[position]
+            thumbnail: emotePNG[position],
+            linkPos: teachers[message.guild.id].indexOf(Teachers[position])
           };
       }
     }

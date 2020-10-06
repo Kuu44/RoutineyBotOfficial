@@ -5,7 +5,7 @@ module.exports = {
   description: 'What\'s the torture after this one?',
   execute(message, args) {
     const Discord = require('discord.js');
-    var info = require('../info.js');
+    var {info,teachers} = require('../info.js');
     info = info[message.guild.id];
 
     const sendCurrent = require('../functions/sendCurrent.js');
@@ -34,7 +34,7 @@ module.exports = {
 
     const emotes = info.routine[day]._emotes;
     const periods = info.routine[day]._periods;
-    const teachers = info.routine[day]._teachers;
+    const Teachers = info.routine[day]._teachers;
     const timing = info.routine[day]._timing;
     const emotePNG = info.routine[day]._emotePNGs;
 
@@ -67,7 +67,8 @@ module.exports = {
         period: 'No Classes After This',
         teacher: 'Ja beta, jiiley apni jindagi :smile:',
         quote: '~',
-        thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+        thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+        linkPos: -1
       };
     } else {
       switch (periods[posn]) {
@@ -76,7 +77,8 @@ module.exports = {
             period: 'BREAK :exploding_head:',
             teacher: 'Go Wild :zany_face:',
             quote: ':star_struck: Next Period :star_struck:',
-            thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+            thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+            linkPos: -1
           };
           break;
         case ' ':
@@ -84,15 +86,17 @@ module.exports = {
             period: 'Free Period :zany_face:',
             teacher: 'Go resume your gaming :video_game:!',
             quote: ':yum: Next Period :yum:',
-            thumbnail: 'https://i.imgur.com/cuLTlNe.png'
+            thumbnail: 'https://i.imgur.com/cuLTlNe.png',
+            linkPos: -1
           };
           break;
         default:
           msg = {
             period: periods[posn],
-            teacher: 'Teacher: ' + teachers[posn],
+            teacher: 'Teacher: ' + Teachers[posn],
             quote: ':rotating_light: Next Class :rotating_light:',
-            thumbnail: emotePNG[posn]
+            thumbnail: emotePNG[posn],
+            linkPos: teachers[message.guild.id].indexOf(Teachers[posn])
           };
       }
     }
