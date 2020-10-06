@@ -10,7 +10,7 @@ module.exports = {
       getCurrTime,
       getDay
     } = require('../functions/timeConvert.js');
-    const info = require('../info.js');
+    const {info} = require('../info.js');
 
     var day = getDay(info[message.guild.id].timeZoneFix) + 1;
     day = (day > 6) ? 0 : day;
