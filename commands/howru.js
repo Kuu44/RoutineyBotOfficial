@@ -4,7 +4,7 @@ module.exports = {
 	dontShow: false,
   description: 'Tells us how the bot is feeling today (new one everyday)',
 	execute(message, args) {
-		const info = require('../info.js');
+		const {info, helpers} = require('../info.js');
 		const {
 			inMinutes,
 			convertTime,
@@ -33,7 +33,7 @@ module.exports = {
 	      message.channel.send(`It's a friggin Saturday, <@!${message.author.id}>. What the hell are you doing messaging me? Go hangout with your (_possibly imaginary_) friends :partying_face:`);
 	      break;
 	    default:
-	      message.channel.send(`I'm feeling particularly routine-ly this ${info.days[getDay(info[message.guild.id].timeZoneFix)]}, <@!${message.author.id}> :stuck_out_tongue_winking_eye:!\nNow go f yourself.`);
+	      message.channel.send(`I'm feeling particularly routine-ly this ${helpers.days[getDay(info[message.guild.id].timeZoneFix)]}, <@!${message.author.id}> :stuck_out_tongue_winking_eye:!\nNow go f yourself.`);
 	  }
 	},
 };

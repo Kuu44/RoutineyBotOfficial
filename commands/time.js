@@ -5,7 +5,10 @@ module.exports = {
   description: 'Gives today\'s date and time',
   execute(message, args) {
     const Discord = require('discord.js');
-    var info = require('../info.js');
+    var {
+      info,
+      helpers
+    } = require('../info.js');
     const {
       getCurrTime,
       getDay
@@ -63,11 +66,11 @@ module.exports = {
       year++;
       month = 1;
     }
-    const fullDate = `${date} ${info.months[month]} ${year}`;
+    const fullDate = `${date} ${helpers.months[month]} ${year}`;
 
     const exampleEmbed = new Discord.MessageEmbed()
       .setColor('#0099ff')
-      .setTitle(`${info.days[getDay(timeFix)]}`)
+      .setTitle(`${helpers.days[getDay(timeFix)]}`)
       .addFields({
         name: fullDate,
         value: `${hr}:${min} ${firstM}`

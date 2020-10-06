@@ -1,6 +1,7 @@
 function inMinutes(time) {
-  return time[0] * 60 + time[1];
+  return (time[0] * 60 + time[1] * 1);
 }
+
 function convertTime(clock) {
   var firstM;
   var hr = clock[0],
@@ -15,7 +16,9 @@ function convertTime(clock) {
 
 //Time 'preTime' minutes early
 const getTime = (time, preTime) => {
-  const info = require('../info.js');
+  const {
+    info
+  } = require('../info.js');
   var total = time[0] * 60 + time[1];
   total -= preTime;
   return [Math.floor(total / 60), total % 60];
@@ -40,7 +43,7 @@ function getCurrTime(timeZoneFix) {
   return [Math.floor(total / 60), total % 60];
 }
 
-function getDay(timeZoneFix){
+function getDay(timeZoneFix) {
   const today = new Date();
   var day = today.getDay();
   var time = today.getHours() * 60 + today.getMinutes();
@@ -49,7 +52,7 @@ function getDay(timeZoneFix){
   time += timeFix;
 
   if (time > 1439) day++;
-  if(day>6) day=0;
+  if (day > 6) day = 0;
   return day;
 }
 module.exports = {
