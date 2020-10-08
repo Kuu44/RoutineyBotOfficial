@@ -19,6 +19,7 @@ function scheduleNotifications(notificationChannel,info,schedule,serverId, bot)
   });
 
    if (notificationChannel != undefined) {
+     if(info.notificationsON) {
         for (var day = 0; day < 6; day++) {
           //Prints routine in the morning
           const todayComm = require(`./giveToday.js`);
@@ -53,14 +54,14 @@ function scheduleNotifications(notificationChannel,info,schedule,serverId, bot)
         });
 
         //notificationChannel.send(" Notifications turned on ");
-        info.notificationsON = true;
         console.log(
           `Notifications turned on in <#${notificationChannel.name}> channel`
         );
         logChannel.send(`:pinching_hand: Notifications turned on in in **${notificationChannel.guild.name}** Server's **${notificationChannel.name}** channel :slight_smile:`)
         return true;
-      } else {
-        return false;
       }
+    }else {
+      return false;
+    }
 }
 module.exports = scheduleNotifications;
