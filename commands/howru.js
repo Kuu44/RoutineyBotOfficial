@@ -3,7 +3,7 @@ module.exports = {
 	args: false,
 	dontShow: false,
   description: 'Tells us how the bot is feeling today (new one everyday)',
-	execute(message, args) {
+	execute(message, args, bot) {
 		const {info, helpers} = require('../info.js');
 		const {
 			inMinutes,

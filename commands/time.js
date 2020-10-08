@@ -3,7 +3,7 @@ module.exports = {
   args: false,
   dontShow: false,
   description: 'Gives today\'s date and time',
-  execute(message, args) {
+  execute(message, args, bot) {
     const Discord = require('discord.js');
     var {
       info,

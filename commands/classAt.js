@@ -4,7 +4,7 @@ module.exports = {
   dontShow: false,
   usage: 'rt! classat <dayOfWeek> <Hour(in 24)> <Minute>',
   description: 'shows class at the given time',
-  execute(message, args) {
+  execute(message, args, bot) {
     const Discord = require('discord.js');
     var {info,teachers} = require('../info.js');
     info = info[message.guild.id];
@@ -84,7 +84,7 @@ module.exports = {
       }
       position++;
     }
-    
+
     const currentFormattedTime = convertTime(currTime);
     if (!time) {
       msg = {

@@ -3,7 +3,7 @@ module.exports = {
   args: false,
   dontShow: false,
   description: 'What\'s the torture after this one?',
-  execute(message, args) {
+  execute(message, args, bot) {
     const Discord = require('discord.js');
     var {info,teachers} = require('../info.js');
     info = info[message.guild.id];

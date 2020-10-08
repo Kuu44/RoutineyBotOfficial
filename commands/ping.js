@@ -3,7 +3,7 @@ module.exports = {
 	args: false,
 	dontShow: false,
   description: 'Ping!',
-	execute(message, args) {
+	execute(message, args, bot) {
 		message.channel.send('Pong.');
 	},
 };

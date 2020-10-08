@@ -4,7 +4,7 @@ module.exports = {
   usage: 'rt!day <day of the week>',
   dontShow: false,
   description: 'Shows routine of a day!',
-  execute(message, args) {
+  execute(message, args, bot) {
     const msgCreate = require('../functions/post.js');
     const postEmbed = require('../functions/postEmbed.js');
     var day;

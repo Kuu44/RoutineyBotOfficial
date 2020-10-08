@@ -66,3 +66,8 @@ A Discord Bot for notifying of routines
 - added 074BCT database
 - changed _teachers_ array to contain _server IDs_ as keys
 - added links of classes in the _notifications_
+### v2.2
+- fixed notification systems not showing links
+- created auto-notifications (_without needing the_ turn on _command_)
+- added some _modifications_ 😋
+- added _giveToday_ function as a way to call the _today_ command

@@ -3,7 +3,7 @@ module.exports = {
     args: false,
     dontShow: true,
     description: 'shows the current accessed routine object',
-    execute(message, args) {
+    execute(message, args, bot) {
       var {info} = require('../info.js');
       info = info[message.guild.id];
 

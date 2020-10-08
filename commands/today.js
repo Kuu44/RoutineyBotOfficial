@@ -3,7 +3,7 @@ module.exports = {
   args: false,
   dontShow: false,
   description: 'The bread and butter of Routiney!',
-  execute(message, args) {
+  execute(message, args, bot) {
     const msgCreate = require('../functions/post.js');
     const postEmbed = require('../functions/postEmbed.js');
     const {

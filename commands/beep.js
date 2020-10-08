@@ -3,7 +3,7 @@ module.exports = {
 	args: false,
 	dontShow: false,
 	description: 'Beep!',
-	execute(message, args) {
+	execute(message, args, bot) {
 		message.channel.send('Boop.');
 	},
 };

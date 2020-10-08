@@ -3,7 +3,7 @@ module.exports = {
   args: false,
   dontShow: true,
   description: 'Logs the channel from which message is sent (dev Only)',
-  execute(message, args) {
+  execute(message, args, bot) {
     console.log('Channel:'+message.channel.id+'\n');
     console.log('ServerId: '+message.guild.id);
   }
