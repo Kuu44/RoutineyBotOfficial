@@ -1,7 +1,6 @@
 // require the discord.js module
 const fs = require('fs');
 const Discord = require('discord.js');
-const keepAlive=require('./server');
 
 const {prefix} = require('./auth.json');
 //const {token} = require('./secrets.json');
