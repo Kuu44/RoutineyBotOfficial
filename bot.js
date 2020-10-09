@@ -72,8 +72,8 @@ bot.on('message', message => {
   if(message.author.id=='550863016665546752') {message.channel.send('Yo Nigga! :sunglasses:');}
   if(message.author.id=='550399525668257898') {message.channel.send('Aye kukur! Sanchai xas? :dog:');}
 
-  if(message.author.id=='391583358146052097') {message.channel.send('Yo ma man Nisan :Amusing:! How\'s _da Playa_ doing?');}
-  if(message.author.id=='591462128951623706') {message.channel.send('Yo ma man Aabhusan :Amusing:! I see you\'re finally using the bot with the _better_ code, Here\'s your request');}
+  if(message.author.id=='391583358146052097') {message.channel.send('Yo ma man Nisan <:Amusing:749565989179359323>! How\'s _da Playa_ doing?');}
+  if(message.author.id=='591462128951623706') {message.channel.send('Yo ma man Aabhusan <:Amusing:749565989179359323>! I see you\'re finally using the bot with the _better_ code, Here\'s your request');}
   if(message.author.id=='626343148649709580') {message.channel.send('**Dank Brooooo** :punch:');}
 
   var args = message.content.slice(prefix.length).trim().split(/ +/);
