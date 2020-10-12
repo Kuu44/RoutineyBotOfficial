@@ -23,7 +23,7 @@ function scheduleNotifications(notificationChannel,info,schedule,serverId, bot)
         for (var day = 0; day < 6; day++) {
           //Prints routine in the morning
           const todayComm = require(`./giveToday.js`);
-          const timeToSet = timeZoneFix([9, 59], info.timeZoneFix);
+          const timeToSet = timeZoneFix([8, 59], info.timeZoneFix);
           schedule.scheduleJob(`${timeToSet[1]} ${timeToSet[0]} * * ${day}`, function() {
             giveToday(notificationChannel, serverId);
           });

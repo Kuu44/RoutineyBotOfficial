@@ -71,3 +71,5 @@ A Discord Bot for notifying of routines
 - created auto-notifications (_without needing the_ turn on _command_)
 - added some _modifications_ 😋
 - added _giveToday_ function as a way to call the _today_ command
+#### v2.2 patch1
+- modified class links after the MS Teams Update
