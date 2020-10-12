@@ -73,3 +73,5 @@ A Discord Bot for notifying of routines
 - added _giveToday_ function as a way to call the _today_ command
 #### v2.2 patch1
 - modified class links after the MS Teams Update
+#### v2.2 patch2
+- fixed bug with today's schedule not printing in the morning
