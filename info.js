@@ -345,7 +345,7 @@ const info = {
     ]
   },
   "550704758055370767" /*The Collusion*/: {
-    "notificationsON": true,
+    "notificationsON": false,
     "startNotification": true,
     "preNotification": true,
     "timeZoneFix": [5, 45],
@@ -531,7 +531,7 @@ const info = {
     ]
   },
   "544232674412462101" /*kuu's*/: {
-    "notificationsON": true,
+    "notificationsON": false,
     "startNotification": true,
     "preNotification": true,
     "timeZoneFix": [5, 45],
@@ -717,7 +717,7 @@ const info = {
     ]
   },
   "681076561142611989" /*bot-test-server*/: {
-    "notificationsON": true,
+    "notificationsON": false,
     "startNotification": true,
     "preNotification": false,
     "timeZoneFix": [5, 45],
@@ -903,7 +903,7 @@ const info = {
     ]
   },
   "679306265674907671": /*BCT076*/ {
-    "notificationsON": true,
+    "notificationsON": false,
     "startNotification": false,
     "preNotification": true,
     "timeZoneFix": [5, 45],

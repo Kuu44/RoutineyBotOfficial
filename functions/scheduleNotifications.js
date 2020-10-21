@@ -18,7 +18,7 @@ function scheduleNotifications(notificationChannel,info,schedule,serverId, bot)
     }
   });
 
-   if (notificationChannel != undefined) {
+   if (notificationChannel != undefined && info.notificationsON) {
         for (var day = 0; day < 6; day++) {
           //Prints routine in the morning
           const giveToday = require(`./giveToday.js`);

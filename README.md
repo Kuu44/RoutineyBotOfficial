@@ -75,3 +75,5 @@ A Discord Bot for notifying of routines
 - modified class links after the MS Teams Update
 #### v2.2 patch2
 - fixed bug with today's schedule not printing in the morning
+#### v2.3
+- added _announce_ (hidden) function to send an anouncement to all servers subscribed to Routiney

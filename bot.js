@@ -3,7 +3,7 @@ const fs = require('fs');
 const Discord = require('discord.js');
 
 const {prefix} = require('./auth.json');
-//const {token} = require('./secrets.json');
+// const {token} = require('./secrets.json');
 
 // Initialize Discord Bot
 const bot = new Discord.Client();
@@ -25,7 +25,7 @@ for (const file of commandFiles) {
 const helpCommand = require('./functions/help.js');
 bot.commands.set(helpCommand.name, helpCommand);
 
-//bot.login(token);
+// bot.login(token);
 bot.login(process.env.BOT_TOKEN);
 
 //Bot commands
