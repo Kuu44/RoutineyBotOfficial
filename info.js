@@ -345,7 +345,7 @@ const info = {
     ]
   },
   "550704758055370767" /*The Collusion*/: {
-    "notificationsON": false,
+    "notificationsON": true,
     "startNotification": true,
     "preNotification": true,
     "timeZoneFix": [5, 45],
@@ -531,7 +531,7 @@ const info = {
     ]
   },
   "544232674412462101" /*kuu's*/: {
-    "notificationsON": false,
+    "notificationsON": true,
     "startNotification": true,
     "preNotification": true,
     "timeZoneFix": [5, 45],
@@ -903,7 +903,7 @@ const info = {
     ]
   },
   "679306265674907671": /*BCT076*/ {
-    "notificationsON": false,
+    "notificationsON": true,
     "startNotification": false,
     "preNotification": true,
     "timeZoneFix": [5, 45],
